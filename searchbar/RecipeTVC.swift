@@ -19,7 +19,7 @@ class RecipeTVC: UIViewController {
     
     
     // The raw data
-    let tempResults = [String]() // ["pie", "custard", "omlete", "boiled Egg", "scrambled egg", "salmon"]
+    let tempResults = [String]()
     // A holder for the filtered results.
     var filteredRecipeResults = [String]()
 
@@ -41,7 +41,7 @@ class RecipeTVC: UIViewController {
 
     }
     
-    
+    // Clear the nofication response when the view is removed.
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
@@ -103,13 +103,6 @@ extension RecipeTVC: UISearchResultsUpdating {
             }
         }
     
-//        filteredRecipeResults = tempResults.filter({ (stringValue:String) -> Bool in
-//            if stringValue.lowercased().contains((searchController.searchBar.text?.lowercased())!) {
-//                return true
-//            } else {
-//                return false
-//            }
-//        })
         resultsTableViewController.tableView.reloadData()
     }
     
