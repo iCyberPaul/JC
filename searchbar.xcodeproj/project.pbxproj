@@ -13,6 +13,7 @@
 		58231B4E1F389D1000AABCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58231B4C1F389D1000AABCC9 /* LaunchScreen.storyboard */; };
 		58231B561F389EAF00AABCC9 /* RecipeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B551F389EAF00AABCC9 /* RecipeTVC.swift */; };
 		58231B581F38B70800AABCC9 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B571F38B70800AABCC9 /* NetworkHandler.swift */; };
+		58231B5A1F38BC5E00AABCC9 /* NetworkHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B591F38BC5E00AABCC9 /* NetworkHandlerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		58231B4F1F389D1000AABCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58231B551F389EAF00AABCC9 /* RecipeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTVC.swift; sourceTree = "<group>"; };
 		58231B571F38B70800AABCC9 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		58231B591F38BC5E00AABCC9 /* NetworkHandlerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				58231B431F389D1000AABCC9 /* AppDelegate.swift */,
 				58231B471F389D1000AABCC9 /* Main.storyboard */,
 				58231B571F38B70800AABCC9 /* NetworkHandler.swift */,
+				58231B591F38BC5E00AABCC9 /* NetworkHandlerDelegate.swift */,
 				58231B4A1F389D1000AABCC9 /* Assets.xcassets */,
 				58231B4C1F389D1000AABCC9 /* LaunchScreen.storyboard */,
 				58231B4F1F389D1000AABCC9 /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				58231B441F389D1000AABCC9 /* AppDelegate.swift in Sources */,
 				58231B561F389EAF00AABCC9 /* RecipeTVC.swift in Sources */,
+				58231B5A1F38BC5E00AABCC9 /* NetworkHandlerDelegate.swift in Sources */,
 				58231B581F38B70800AABCC9 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

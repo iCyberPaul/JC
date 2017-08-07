@@ -36,8 +36,16 @@ class RecipeTVC: UIViewController {
         resultsTableViewController.tableView.delegate = self
         fullListTableView.dataSource = self
         fullListTableView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveRecipies(notification:)), name: NSNotification.Name(rawValue: NetworkNames.search.rawValue), object: nil)
 
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
 
 extension RecipeTVC: UITableViewDataSource {
@@ -74,13 +82,34 @@ extension RecipeTVC: UITableViewDelegate {
 
 extension RecipeTVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filteredRecipeResults = tempResults.filter({ (stringValue:String) -> Bool in
-            if stringValue.lowercased().contains((searchController.searchBar.text?.lowercased())!) {
-                return true
-            } else {
-                return false
+        
+        if let searchTerm = searchController.searchBar.text {
+            let nh = NetworkHandler()
+            nh.obtainRecipies(containing: searchTerm)
+        }
+        
+    }
+    
+    @objc func receiveRecipies(notification:NSNotification) {
+    
+        let userInfo = notification.userInfo!
+        
+        for (key, value ) in userInfo as! [String:Any] {
+            switch key {
+            case NetworkNames.search.rawValue :
+                filteredRecipeResults = value as! [String]
+
+            default : break
             }
-        })
+        }
+    
+//        filteredRecipeResults = tempResults.filter({ (stringValue:String) -> Bool in
+//            if stringValue.lowercased().contains((searchController.searchBar.text?.lowercased())!) {
+//                return true
+//            } else {
+//                return false
+//            }
+//        })
         resultsTableViewController.tableView.reloadData()
     }
     
