@@ -17,36 +17,40 @@ class NetworkHandler {
     
     var entriesLimit = 20
     var url = "http://www.recipepuppy.com/api/"
-
+    
     
     func obtainRecipies(containing searchTerm:String) {
         let preUrlString = url.appending("?q=\(searchTerm)")
-        if let urlString = URL(string:preUrlString) {
-            do {
-                let data = try Data(contentsOf: urlString, options:.alwaysMapped)
+        // Encode to allow spaces
+        if let encodedUrlSting = preUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            
+            if let urlString = URL(string:encodedUrlSting) {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! Dictionary<String,AnyObject>
-                    print("jaon = \(json)")
-                    var recipeArray = [String]()
-                    
-                    if let individualDataDictionay = json["results"] {
-                        let individualDataDictionryArray = individualDataDictionay as! Array<AnyObject>
-                        for (count, recipeInfo) in individualDataDictionryArray.enumerated() {
-                            if count < entriesLimit {
-                                let recipe = recipeInfo["title"] as? String ?? ""
-                                recipeArray.append(recipe)
+                    let data = try Data(contentsOf: urlString, options:.alwaysMapped)
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! Dictionary<String,AnyObject>
+                        print("jaon = \(json)")
+                        var recipeArray = [String]()
+                        
+                        if let individualDataDictionay = json["results"] {
+                            let individualDataDictionryArray = individualDataDictionay as! Array<AnyObject>
+                            for (count, recipeInfo) in individualDataDictionryArray.enumerated() {
+                                if count < entriesLimit {
+                                    let recipe = recipeInfo["title"] as? String ?? ""
+                                    recipeArray.append(recipe)
+                                }
                             }
                         }
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: NSNotification.Name(NetworkNames.search.rawValue), object: self, userInfo: [NetworkNames.search.rawValue:recipeArray])
+                        }
+                    } catch {
+                        print("failed to convert data to json")
                     }
-                    DispatchQueue.main.async {
-                        NotificationCenter.default.post(name: NSNotification.Name(NetworkNames.search.rawValue), object: self, userInfo: [NetworkNames.search.rawValue:recipeArray])
-                    }
+                    
                 } catch {
-                    print("failed to convert data to json")
+                    print("Failed to get data")
                 }
-                
-            } catch {
-                print("Failed to get data")
             }
         }
         
