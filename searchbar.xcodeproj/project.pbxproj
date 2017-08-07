@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		58231B441F389D1000AABCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B431F389D1000AABCC9 /* AppDelegate.swift */; };
-		58231B461F389D1000AABCC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B451F389D1000AABCC9 /* ViewController.swift */; };
 		58231B491F389D1000AABCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58231B471F389D1000AABCC9 /* Main.storyboard */; };
 		58231B4B1F389D1000AABCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58231B4A1F389D1000AABCC9 /* Assets.xcassets */; };
 		58231B4E1F389D1000AABCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58231B4C1F389D1000AABCC9 /* LaunchScreen.storyboard */; };
+		58231B561F389EAF00AABCC9 /* RecipeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B551F389EAF00AABCC9 /* RecipeTVC.swift */; };
+		58231B581F38B70800AABCC9 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58231B571F38B70800AABCC9 /* NetworkHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58231B401F389D1000AABCC9 /* searchbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = searchbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58231B431F389D1000AABCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58231B451F389D1000AABCC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		58231B481F389D1000AABCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58231B4A1F389D1000AABCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58231B4D1F389D1000AABCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58231B4F1F389D1000AABCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58231B551F389EAF00AABCC9 /* RecipeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTVC.swift; sourceTree = "<group>"; };
+		58231B571F38B70800AABCC9 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,10 @@
 		58231B421F389D1000AABCC9 /* searchbar */ = {
 			isa = PBXGroup;
 			children = (
+				58231B551F389EAF00AABCC9 /* RecipeTVC.swift */,
 				58231B431F389D1000AABCC9 /* AppDelegate.swift */,
-				58231B451F389D1000AABCC9 /* ViewController.swift */,
 				58231B471F389D1000AABCC9 /* Main.storyboard */,
+				58231B571F38B70800AABCC9 /* NetworkHandler.swift */,
 				58231B4A1F389D1000AABCC9 /* Assets.xcassets */,
 				58231B4C1F389D1000AABCC9 /* LaunchScreen.storyboard */,
 				58231B4F1F389D1000AABCC9 /* Info.plist */,
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58231B461F389D1000AABCC9 /* ViewController.swift in Sources */,
 				58231B441F389D1000AABCC9 /* AppDelegate.swift in Sources */,
+				58231B561F389EAF00AABCC9 /* RecipeTVC.swift in Sources */,
+				58231B581F38B70800AABCC9 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PQY9C9Z38B;
 				INFOPLIST_FILE = searchbar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mauley-Media.searchbar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PQY9C9Z38B;
 				INFOPLIST_FILE = searchbar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mauley-Media.searchbar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
