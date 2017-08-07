@@ -5,8 +5,9 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +15,10 @@
         <scene sceneID="v97-S9-OMf">
             <objects>
                 <viewController id="gB1-bf-M0F" customClass="RecipeTVC" customModule="searchbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CWb-Cs-gM3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vrc-cb-aN6"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gyq-92-IzU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,12 +49,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Sb3-a8-yP7" firstAttribute="top" secondItem="1be-YX-crP" secondAttribute="top" id="Dhn-dw-eCc"/>
-                            <constraint firstItem="1be-YX-crP" firstAttribute="trailing" secondItem="Sb3-a8-yP7" secondAttribute="trailing" id="baE-Bk-XfH"/>
-                            <constraint firstItem="Sb3-a8-yP7" firstAttribute="leading" secondItem="1be-YX-crP" secondAttribute="leading" id="jyy-2F-sdl"/>
-                            <constraint firstItem="1be-YX-crP" firstAttribute="bottom" secondItem="Sb3-a8-yP7" secondAttribute="bottom" id="wKQ-wG-4mA"/>
+                            <constraint firstItem="Sb3-a8-yP7" firstAttribute="top" secondItem="CWb-Cs-gM3" secondAttribute="bottom" id="Dhn-dw-eCc"/>
+                            <constraint firstAttribute="trailing" secondItem="Sb3-a8-yP7" secondAttribute="trailing" id="baE-Bk-XfH"/>
+                            <constraint firstItem="Sb3-a8-yP7" firstAttribute="leading" secondItem="Gyq-92-IzU" secondAttribute="leading" id="jyy-2F-sdl"/>
+                            <constraint firstItem="Vrc-cb-aN6" firstAttribute="top" secondItem="Sb3-a8-yP7" secondAttribute="bottom" id="wKQ-wG-4mA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1be-YX-crP"/>
                     </view>
                     <connections>
                         <outlet property="fullListTableView" destination="Sb3-a8-yP7" id="zNv-h9-YRC"/>

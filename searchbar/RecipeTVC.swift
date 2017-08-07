@@ -19,7 +19,7 @@ class RecipeTVC: UIViewController {
     
     
     // The raw data
-    let tempResults = ["pie", "custard", "omlete", "boiled Egg", "scrambled egg", "salmon"]
+    let tempResults = [String]() // ["pie", "custard", "omlete", "boiled Egg", "scrambled egg", "salmon"]
     // A holder for the filtered results.
     var filteredRecipeResults = [String]()
 
